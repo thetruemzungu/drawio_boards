@@ -17,15 +17,7 @@ class PagerdutyClient
       }
 
       puts "Response Code : #{response.code}"
-      self.json_to_map(response.body)
-    end
-
-    def json_to_map(json_string)
-      JSON.parse(json_string)
-    end
-
-    def get_input_line()
-      STDIN.gets().chomp()
+      response.body
     end
   end
 end
