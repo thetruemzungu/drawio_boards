@@ -12,7 +12,7 @@ describe "FooBar" do
         end
 
         it "creates a grumbot" do
-            expect(FooBar.return_grumbot().class).to eq(Grumbot)
+            expect(FooBar.return_grumbot().class).to eq(Robot::Grumbot)
         end
 
         it "Is infact a correctly made grumbot" do

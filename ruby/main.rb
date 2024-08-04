@@ -26,7 +26,7 @@ class FooBar
         end
 
         def return_grumbot()
-            Grumbot.new("Grum", "Bot", "Brilliant")
+            Robot::Grumbot.new("Grum", "Bot", "Brilliant")
         end
 
         def json_to_map(json_string)
