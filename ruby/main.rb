@@ -1,4 +1,5 @@
 require_relative "pagerduty_client.rb"
+require_relative "grumbot.rb"
 class FooBar
     class << self
         def hello_world()
@@ -24,9 +25,13 @@ class FooBar
             return jsonResponse
         end
 
+        def return_grumbot()
+            Grumbot.new("Grum", "Bot", "Brilliant")
+        end
+
         def json_to_map(json_string)
             JSON.parse(json_string)
-          end
+        end
 
         def get_input_line()
             STDIN.gets().chomp()
