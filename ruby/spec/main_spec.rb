@@ -21,5 +21,10 @@ describe "FooBar" do
             expect(grumbot.lastName).to eq('Bot')
             expect(grumbot.grumbotIntelligence).to eq('Brilliant')
         end
+
+        it 'throws an exception' do
+            allow(PagerdutyClient).to receive(:http_get).and_raise(StandardError.new("There was an exception thrown"))
+            expect(FooBar.main()).to eq("There was an exception thrown")
+        end
     end
 end

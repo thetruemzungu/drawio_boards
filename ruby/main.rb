@@ -7,7 +7,7 @@ class FooBar
         end
         
         def main()
-            jsonResponse = json_to_map(PagerdutyClient.http_get("https://api.pagerduty.com/log_entries"))
+                jsonResponse = json_to_map(PagerdutyClient.http_get("https://api.pagerduty.com/log_entries"))
             # /abilities
             # abilites = jsonResponse["abilities"]
             # abilities.each do |ability|
@@ -22,6 +22,8 @@ class FooBar
             #     puts log["created_at"]
             #     puts
             # end
+            rescue StandardError => e
+                return e.to_s()
             return jsonResponse
         end
 
